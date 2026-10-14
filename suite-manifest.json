@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "nodes": [
+    {
+      "id": "agent-workbench",
+      "skill": "agent-workbench",
+      "requires_skills": []
+    },
+    {
+      "id": "portable-skill-creator",
+      "skill": "portable-skill-creator",
+      "requires_skills": []
+    },
+    {
+      "id": "cross-agent-npm-package-development",
+      "skill": "cross-agent-npm-package-development",
+      "requires_skills": []
+    },
+    {
+      "id": "visual-project-planner",
+      "skill": "visual-project-planner",
+      "requires_skills": []
+    },
+    {
+      "id": "skill-forward-test",
+      "skill": "skill-forward-test",
+      "requires_skills": []
+    }
+  ]
+}

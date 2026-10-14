@@ -1,0 +1,3 @@
+interface:
+  display_name: "跨 Agent npm 能力包开发"
+  short_description: "开发、审计和验证 Codex 与 SealSeek 的 npm 能力包"

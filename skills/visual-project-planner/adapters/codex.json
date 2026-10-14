@@ -1,0 +1,74 @@
+{
+  "schema": "portable-skill-adapter",
+  "platform": "codex",
+  "os_evidence": "macOS pilot; Windows/Linux untested",
+  "mappings": [
+    {
+      "capability_id": "workspace.files",
+      "status": "tested",
+      "features": [
+        "read",
+        "exclusive-write"
+      ],
+      "implementation": {
+        "kind": "native",
+        "tools": [
+          "exec_command",
+          "apply_patch"
+        ],
+        "instructions": "Read metadata first. Write fresh revision directories. Return artifact paths; do not expose project secrets."
+      },
+      "tested_date": "2026-10-13",
+      "evidence": [
+        "Codex macOS main conversation: installed source resolved, Node doctor/render ran, local HTML open was requested and artifact link supplied. Preview request returned queued; browser artifact rendering was separately tested."
+      ]
+    },
+    {
+      "capability_id": "command.execute",
+      "status": "tested",
+      "features": [
+        "node22",
+        "exit-status"
+      ],
+      "implementation": {
+        "kind": "native",
+        "tools": [
+          "exec_command"
+        ],
+        "instructions": "Resolve Node.js from PATH and verify version. Invoke scripts/planner.mjs from the installed Skill path; parse JSON and exit status."
+      },
+      "tested_date": "2026-10-13",
+      "evidence": [
+        "Codex macOS main conversation: installed source resolved, Node doctor/render ran, local HTML open was requested and artifact link supplied. Preview request returned queued; browser artifact rendering was separately tested."
+      ]
+    },
+    {
+      "capability_id": "artifact.present",
+      "status": "tested",
+      "features": [
+        "local-file-link",
+        "html-preview"
+      ],
+      "implementation": {
+        "kind": "native",
+        "tools": [
+          "mcp__codex_app__open_in_codex"
+        ],
+        "instructions": "Open the absolute plan.html path in the desktop panel. Always provide a Markdown file link. Without the desktop preview report missing html-preview; do not pretend to have inspected it."
+      },
+      "tested_date": "2026-10-13",
+      "evidence": [
+        "Codex macOS main conversation: installed source resolved, Node doctor/render ran, local HTML open was requested and artifact link supplied. Preview request returned queued; browser artifact rendering was separately tested."
+      ]
+    }
+  ],
+  "normalization": {
+    "ok": true,
+    "artifacts": [],
+    "metadata": {},
+    "task_id": null,
+    "cost": null,
+    "warnings": []
+  },
+  "compatibility": "Codex macOS main-run-pass. Desktop preview request accepted as queued. Fresh-conversation implicit routing and other operating systems remain untested."
+}

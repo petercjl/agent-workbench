@@ -1,0 +1,23 @@
+{
+  "upstream": "https://github.com/nicobailon/visual-explainer",
+  "fork": "https://github.com/petercjl/visual-explainer",
+  "commit": "24825224ec1dd957613bbfa895e530d8445a6402",
+  "files": {
+    "render.mjs": {
+      "source": "plugins/visual-explainer/plan/render.mjs",
+      "sha256": "5a43065982c07abeba9d98b428ed5598ff019375f70145ef52d3fca7050af9dd"
+    },
+    "plan.css": {
+      "source": "plugins/visual-explainer/plan/plan.css",
+      "sha256": "6a2fb5c4e85a9ed6330697e437f394af0917fc340979c08a1bfd37573dfa86c3"
+    },
+    "plan.js": {
+      "source": "plugins/visual-explainer/plan/plan.js",
+      "sha256": "b9721da592b37711e2258a23016aab9f6ecae1873685ed7b466a48635260eb4a"
+    },
+    "LICENSE": {
+      "source": "LICENSE",
+      "sha256": "871b3c6c64e030c0647ca33543716bdae9511ae2d6a85d6f4ce63783bab52c8f"
+    }
+  }
+}

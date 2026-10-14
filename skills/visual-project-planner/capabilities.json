@@ -1,0 +1,91 @@
+{
+  "schema": "portable-skill-capabilities",
+  "schema_version": "1.0.0",
+  "skill": "visual-project-planner",
+  "target_platforms": [
+    "codex"
+  ],
+  "capabilities": [
+    {
+      "id": "workspace.files",
+      "purpose": "Read source evidence and preserve revision artifacts",
+      "required": true,
+      "required_features": [
+        "read",
+        "exclusive-write"
+      ],
+      "input_fields": [
+        "request"
+      ],
+      "output_fields": [
+        "ok",
+        "artifacts",
+        "metadata",
+        "warnings"
+      ],
+      "side_effects": {
+        "external_mutation": false,
+        "may_cost_money": false,
+        "authorization": "Only requested local planning artifacts; project execution needs its own existing user authorization."
+      },
+      "errors": [
+        "CAPABILITY_UNAVAILABLE",
+        "OUTPUT_CONTRACT_FAILED"
+      ]
+    },
+    {
+      "id": "command.execute",
+      "purpose": "Validate and render plans through Node.js",
+      "required": true,
+      "required_features": [
+        "node22",
+        "exit-status"
+      ],
+      "input_fields": [
+        "request"
+      ],
+      "output_fields": [
+        "ok",
+        "artifacts",
+        "metadata",
+        "warnings"
+      ],
+      "side_effects": {
+        "external_mutation": false,
+        "may_cost_money": false,
+        "authorization": "Only requested local planning artifacts; project execution needs its own existing user authorization."
+      },
+      "errors": [
+        "CAPABILITY_UNAVAILABLE",
+        "OUTPUT_CONTRACT_FAILED"
+      ]
+    },
+    {
+      "id": "artifact.present",
+      "purpose": "Present the generated local HTML",
+      "required": true,
+      "required_features": [
+        "local-file-link",
+        "html-preview"
+      ],
+      "input_fields": [
+        "request"
+      ],
+      "output_fields": [
+        "ok",
+        "artifacts",
+        "metadata",
+        "warnings"
+      ],
+      "side_effects": {
+        "external_mutation": false,
+        "may_cost_money": false,
+        "authorization": "Only requested local planning artifacts; project execution needs its own existing user authorization."
+      },
+      "errors": [
+        "CAPABILITY_UNAVAILABLE",
+        "OUTPUT_CONTRACT_FAILED"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "schema_version": 1,
+  "origin": "user-approved original Codex work methods",
+  "mode": "reviewed-release-snapshot",
+  "skills": [
+    "portable-skill-creator",
+    "cross-agent-npm-package-development",
+    "visual-project-planner",
+    "skill-forward-test"
+  ],
+  "files": [
+    {
+      "path": "skills/portable-skill-creator/SKILL.md",
+      "sha256": "10d4e5f1558af7dcadb36b33e509eb0df34301d2d2c9b6bf5484819c7abe96d9",
+      "original_sha256": "10d4e5f1558af7dcadb36b33e509eb0df34301d2d2c9b6bf5484819c7abe96d9"
+    },
+    {
+      "path": "skills/portable-skill-creator/adapters/codex.json",
+      "sha256": "203c2d807703e42ed7f6399f5e9ffc4d0047a9fee5cd63c4c079e1e824f27ec0",
+      "original_sha256": "203c2d807703e42ed7f6399f5e9ffc4d0047a9fee5cd63c4c079e1e824f27ec0"
+    },
+    {
+      "path": "skills/portable-skill-creator/adapters/sealseek.json",
+      "sha256": "25bbbf984ad9d480da739111bf01af57d0550e9bf34f63d1948e75ac1119cc00",
+      "original_sha256": "25bbbf984ad9d480da739111bf01af57d0550e9bf34f63d1948e75ac1119cc00"
+    },
+    {
+      "path": "skills/portable-skill-creator/agents/openai.yaml",
+      "sha256": "9aadbe42b40d8f58cd8394ed04a1f550be09f2eb4a9a549c57afa01d2174096d",
+      "original_sha256": "9aadbe42b40d8f58cd8394ed04a1f550be09f2eb4a9a549c57afa01d2174096d"
+    },
+    {
+      "path": "skills/portable-skill-creator/capabilities.json",
+      "sha256": "a284761fcccdcabeae10d96facddb8b60387cc1c1192d41ac562926429941f43",
+      "original_sha256": "a284761fcccdcabeae10d96facddb8b60387cc1c1192d41ac562926429941f43"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/SCHEMA.md",
+      "sha256": "ac752124fc1b29c723a9600080dfaacbfb05262edbbfaab618fce214b3feb1d1",
+      "original_sha256": "ac752124fc1b29c723a9600080dfaacbfb05262edbbfaab618fce214b3feb1d1"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/capability-contract-protocol.md",
+      "sha256": "da4f0948a6d3093730da510e9040a4e4cfcc1e3f2d87e0c516e670f2ab57762d",
+      "original_sha256": "da4f0948a6d3093730da510e9040a4e4cfcc1e3f2d87e0c516e670f2ab57762d"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/capability-contract.schema.json",
+      "sha256": "87be361261812edbe14879fdda4fd1de02e2dd1645daa374baec120d91e28e9b",
+      "original_sha256": "87be361261812edbe14879fdda4fd1de02e2dd1645daa374baec120d91e28e9b"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/index.md",
+      "sha256": "d4ebb9cd56aad01f4a38f11bc47548deadac404efc684a5e25aa4913bab9625f",
+      "original_sha256": "d4ebb9cd56aad01f4a38f11bc47548deadac404efc684a5e25aa4913bab9625f"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/knowledge-compiled-skill-method.md",
+      "sha256": "33b19423c0adc35382075a3ea13f8ecd24819f2a0dbfdcd079126d9e8f909593",
+      "original_sha256": "33b19423c0adc35382075a3ea13f8ecd24819f2a0dbfdcd079126d9e8f909593"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/log.md",
+      "sha256": "726b8272c7ce14b1676600df00bbec544e63a096ab893782a2a1ccf2af63cc16",
+      "original_sha256": "726b8272c7ce14b1676600df00bbec544e63a096ab893782a2a1ccf2af63cc16"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/platform-adapters.md",
+      "sha256": "ef1f8b9806874779d77d86d471fa2e90d049bc7811e32a41d8f4d8de2e91c7b2",
+      "original_sha256": "ef1f8b9806874779d77d86d471fa2e90d049bc7811e32a41d8f4d8de2e91c7b2"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/portability-policy.md",
+      "sha256": "3482bea48732a1806ae1793aaff013f6085acdb14ca809d46b095b89f375b92b",
+      "original_sha256": "3482bea48732a1806ae1793aaff013f6085acdb14ca809d46b095b89f375b92b"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/queries/create-or-update-skill.md",
+      "sha256": "471bcc293dfed6c671406b94b28de2e0d004b3754b7625604032ba0bb6a9f47a",
+      "original_sha256": "471bcc293dfed6c671406b94b28de2e0d004b3754b7625604032ba0bb6a9f47a"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/queries/port-skill-between-agents.md",
+      "sha256": "e1156206282b1890b89a065532892c5acd1fa4f0bf62d9428e7ffa1bf0c54d20",
+      "original_sha256": "e1156206282b1890b89a065532892c5acd1fa4f0bf62d9428e7ffa1bf0c54d20"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/queries/review-capability-gaps.md",
+      "sha256": "bc59e61248c722b16fd72cb094437eb8c32311b89d37e37f84d7c1ca0948e170",
+      "original_sha256": "bc59e61248c722b16fd72cb094437eb8c32311b89d37e37f84d7c1ca0948e170"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/queries/run-clean-regression.md",
+      "sha256": "f1a84c07c08218511a959b54ee4eb5fd1482342f9d0a2882541d7764f6780e2a",
+      "original_sha256": "f1a84c07c08218511a959b54ee4eb5fd1482342f9d0a2882541d7764f6780e2a"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/source-manifest.md",
+      "sha256": "f3549f62b333c891577bbbe2ff859c3d722dcd4d7ae2d518593c02cbfbf5e137",
+      "original_sha256": "f3549f62b333c891577bbbe2ff859c3d722dcd4d7ae2d518593c02cbfbf5e137"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/topics/business-flow-and-strategy-sources.md",
+      "sha256": "7ed1a772c9b34ff6ca663021705516042756dc82d0cb9cfdd99bb410da101ae3",
+      "original_sha256": "7ed1a772c9b34ff6ca663021705516042756dc82d0cb9cfdd99bb410da101ae3"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/topics/capability-abstraction.md",
+      "sha256": "307a434eb8ef01412156ed453de56877fba8bd653d543c0bb7c68e736f765cd2",
+      "original_sha256": "307a434eb8ef01412156ed453de56877fba8bd653d543c0bb7c68e736f765cd2"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/topics/planning-and-confirmation.md",
+      "sha256": "c391d9f0b9157736514d4be78c3556ca17a8174a9f5f18a403a6631f62b31b2b",
+      "original_sha256": "c391d9f0b9157736514d4be78c3556ca17a8174a9f5f18a403a6631f62b31b2b"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/topics/skill-worldview.md",
+      "sha256": "fdd841dfb73320f81f7167cf7de23cebaea054c03ad307c166ed47eefc51820b",
+      "original_sha256": "fdd841dfb73320f81f7167cf7de23cebaea054c03ad307c166ed47eefc51820b"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/topics/standard-answer-and-regression.md",
+      "sha256": "f21d4e987925196c434903b866611b4408f298943a0a78f76e8447db871a6101",
+      "original_sha256": "f21d4e987925196c434903b866611b4408f298943a0a78f76e8447db871a6101"
+    },
+    {
+      "path": "skills/portable-skill-creator/references/unified-skill-design-protocol.md",
+      "sha256": "7aa367f6aa2b6ff3417195757873f35aa5330663e8fe2e5abefef8b29541bac1",
+      "original_sha256": "7aa367f6aa2b6ff3417195757873f35aa5330663e8fe2e5abefef8b29541bac1"
+    },
+    {
+      "path": "skills/portable-skill-creator/scripts/inspect_adapter_gaps.py",
+      "sha256": "c43ec1f6c84686047db51528a957d6233da8718ac8fbff19b3cfebf638707a5b",
+      "original_sha256": "c43ec1f6c84686047db51528a957d6233da8718ac8fbff19b3cfebf638707a5b"
+    },
+    {
+      "path": "skills/portable-skill-creator/scripts/validate_capability_contract.py",
+      "sha256": "a75cf0a5dece2de333975dfc921b15e39593af0dc7cb304aaf1371a5678bddd8",
+      "original_sha256": "a75cf0a5dece2de333975dfc921b15e39593af0dc7cb304aaf1371a5678bddd8"
+    },
+    {
+      "path": "skills/portable-skill-creator/scripts/validate_knowledge_layer.py",
+      "sha256": "92bb8930cb31b5509e94ac0c70cac1b14e4cf9c3088fae8bfc72d174c120d78a",
+      "original_sha256": "92bb8930cb31b5509e94ac0c70cac1b14e4cf9c3088fae8bfc72d174c120d78a"
+    },
+    {
+      "path": "skills/portable-skill-creator/scripts/validate_portability.py",
+      "sha256": "c5b326cb7995f289abdb75526fb89f3079b18e2a429b9c54c2c4f809ffb612d3",
+      "original_sha256": "c5b326cb7995f289abdb75526fb89f3079b18e2a429b9c54c2c4f809ffb612d3"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/SKILL.md",
+      "sha256": "fcd8e7b38ee99d323ab209c42e14b4283ff1ec0758ba12c73fc5a2e783b2fe09",
+      "original_sha256": "fcd8e7b38ee99d323ab209c42e14b4283ff1ec0758ba12c73fc5a2e783b2fe09"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/adapters/codex-own.json",
+      "sha256": "78b2ceaa6a576bbe1ed74b9f594260345c38711dcb829b6e6b2f59a2686cb9a0"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/adapters/codex.json",
+      "sha256": "663d620856863d025b685854a5bd0de4a6adb3b9ee83bb7e89fdcafc08a99186"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/agents/openai.yaml",
+      "sha256": "d9818e52169be5e0798d847a7215887bc61ffdc39737414829f2fde8ec6f217c",
+      "original_sha256": "d9818e52169be5e0798d847a7215887bc61ffdc39737414829f2fde8ec6f217c"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/assets/qa-cross-platform.yml",
+      "sha256": "7d8e0c33ff319ef53b2eaf9e0e548c954d5564fe15a3f60b0100877cf03f4bcb",
+      "original_sha256": "7d8e0c33ff319ef53b2eaf9e0e548c954d5564fe15a3f60b0100877cf03f4bcb"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/capabilities.json",
+      "sha256": "fbf30e1bf3a2870c8f4b8c66e671e43e5ea0984ef6963fe3124640456a85fe47"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/SCHEMA.md",
+      "sha256": "0fcc5ad0765dc18db4816f3ab43172906bb7419fcecb72fb92350e8b64c52e58",
+      "original_sha256": "0fcc5ad0765dc18db4816f3ab43172906bb7419fcecb72fb92350e8b64c52e58"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/index.md",
+      "sha256": "8f562e8f3b8911bf87e522a9c491398ed9dd07cd829203ff2a4d90d2119506cd",
+      "original_sha256": "8f562e8f3b8911bf87e522a9c491398ed9dd07cd829203ff2a4d90d2119506cd"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/log.md",
+      "sha256": "a2c02709671b9bf34afd30429ba1b5a198df12af564f8d785d5edb7ba2d5571b",
+      "original_sha256": "a2c02709671b9bf34afd30429ba1b5a198df12af564f8d785d5edb7ba2d5571b"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/package-contract.md",
+      "sha256": "7657585d3c719fe61252424004c856fe6c54092c0cd65265b814cf68b6e160ff",
+      "original_sha256": "7657585d3c719fe61252424004c856fe6c54092c0cd65265b814cf68b6e160ff"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/queries/design-or-repair-package.md",
+      "sha256": "b5b0dce152b104ef7d8efd5c30279046edf110404cfc60d0dbf1c94ab88e4db6",
+      "original_sha256": "b5b0dce152b104ef7d8efd5c30279046edf110404cfc60d0dbf1c94ab88e4db6"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/source-manifest.md",
+      "sha256": "2efa156d2bb625f01317c0cf56b5e9acb7aa91692aa084328ab9e43bfa868daa",
+      "original_sha256": "2efa156d2bb625f01317c0cf56b5e9acb7aa91692aa084328ab9e43bfa868daa"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/topics/failure-to-gate.md",
+      "sha256": "da6bbbf023562d2da0506188123d79f27acc77b24e8c55c1d0cd046fd92755e8",
+      "original_sha256": "da6bbbf023562d2da0506188123d79f27acc77b24e8c55c1d0cd046fd92755e8"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/references/topics/skill-to-suite-migration.md",
+      "sha256": "35b3cec2a0781549af04168956f80d71993e589bca05bad0c8b03d2d36b5e97c",
+      "original_sha256": "35b3cec2a0781549af04168956f80d71993e589bca05bad0c8b03d2d36b5e97c"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/scripts/audit-package.mjs",
+      "sha256": "436987b11bfcb80416b8d61f824b56bf2568148cffe4e73d7f42528c0e45f4e8",
+      "original_sha256": "436987b11bfcb80416b8d61f824b56bf2568148cffe4e73d7f42528c0e45f4e8"
+    },
+    {
+      "path": "skills/cross-agent-npm-package-development/scripts/suite-contract.mjs",
+      "sha256": "47a349db9b181db7d6e0633ecba4a390dc492f82732f23b3f0cafb2f11ced23e",
+      "original_sha256": "47a349db9b181db7d6e0633ecba4a390dc492f82732f23b3f0cafb2f11ced23e"
+    },
+    {
+      "path": "skills/visual-project-planner/SKILL.md",
+      "sha256": "8f7987cb4310585c3d2c871b7bdc71d57b3956b60e97bc825deddaeed2bdb3e5",
+      "original_sha256": "8f7987cb4310585c3d2c871b7bdc71d57b3956b60e97bc825deddaeed2bdb3e5"
+    },
+    {
+      "path": "skills/visual-project-planner/adapters/codex.json",
+      "sha256": "709d7c9e639c3e0a79e8deff0613cfd48a0026ebdd2d75ce9015597ca5891af1",
+      "original_sha256": "709d7c9e639c3e0a79e8deff0613cfd48a0026ebdd2d75ce9015597ca5891af1"
+    },
+    {
+      "path": "skills/visual-project-planner/agents/openai.yaml",
+      "sha256": "a07e582a738db02497ef02941cf270fc3023490a016268d0c8bc7bf49a985bb5",
+      "original_sha256": "a07e582a738db02497ef02941cf270fc3023490a016268d0c8bc7bf49a985bb5"
+    },
+    {
+      "path": "skills/visual-project-planner/capabilities.json",
+      "sha256": "d321d11dc9caa5e33caf95385facd58cd0142c29105db4f8441eff948b7fe2e6",
+      "original_sha256": "d321d11dc9caa5e33caf95385facd58cd0142c29105db4f8441eff948b7fe2e6"
+    },
+    {
+      "path": "skills/visual-project-planner/references/SCHEMA.md",
+      "sha256": "e263eaf7f512093dc527e3a99e5ff15fa4b7cf6cce4a5227db9fee38e1eaa25a",
+      "original_sha256": "e263eaf7f512093dc527e3a99e5ff15fa4b7cf6cce4a5227db9fee38e1eaa25a"
+    },
+    {
+      "path": "skills/visual-project-planner/references/contract.md",
+      "sha256": "7a99a3a83ee974bc81de908420fa90d1c2f918c1f2b7b52cf47e255ef9599d28",
+      "original_sha256": "7a99a3a83ee974bc81de908420fa90d1c2f918c1f2b7b52cf47e255ef9599d28"
+    },
+    {
+      "path": "skills/visual-project-planner/references/index.md",
+      "sha256": "1e1d8a75ef65063d4039ae6453b6f958b40d498848d8c6e81d488aab8e36fc63",
+      "original_sha256": "1e1d8a75ef65063d4039ae6453b6f958b40d498848d8c6e81d488aab8e36fc63"
+    },
+    {
+      "path": "skills/visual-project-planner/references/log.md",
+      "sha256": "d49198e47a1c65bde199f0ede18307ad6534a183562671f2f702847939aaca10",
+      "original_sha256": "d49198e47a1c65bde199f0ede18307ad6534a183562671f2f702847939aaca10"
+    },
+    {
+      "path": "skills/visual-project-planner/references/queries/deliver.md",
+      "sha256": "4f163da503ae839e78623d845ab02043b99409f63da71507f1538ecdfc1604d8",
+      "original_sha256": "4f163da503ae839e78623d845ab02043b99409f63da71507f1538ecdfc1604d8"
+    },
+    {
+      "path": "skills/visual-project-planner/references/queries/plan.md",
+      "sha256": "291537a7c37ca2df8a4ef94146eca7e66fcae44068dc7f820075e69a18355111",
+      "original_sha256": "291537a7c37ca2df8a4ef94146eca7e66fcae44068dc7f820075e69a18355111"
+    },
+    {
+      "path": "skills/visual-project-planner/references/queries/revise.md",
+      "sha256": "ef20cb6252e19342cd78819c58a1364238eb0651248c76de6b838d1d198c7fc2",
+      "original_sha256": "ef20cb6252e19342cd78819c58a1364238eb0651248c76de6b838d1d198c7fc2"
+    },
+    {
+      "path": "skills/visual-project-planner/references/source-manifest.md",
+      "sha256": "92c443af136d681b138262914663f75a008c2b7142959d609dfc9d6e60b98a36",
+      "original_sha256": "92c443af136d681b138262914663f75a008c2b7142959d609dfc9d6e60b98a36"
+    },
+    {
+      "path": "skills/visual-project-planner/references/topics/delivery.md",
+      "sha256": "f8790542b062d092cf688c54501546b9e5f3ef06f46fc1c7526d8b187a75e429",
+      "original_sha256": "f8790542b062d092cf688c54501546b9e5f3ef06f46fc1c7526d8b187a75e429"
+    },
+    {
+      "path": "skills/visual-project-planner/references/topics/planning.md",
+      "sha256": "8112533dec37b25d2626dec0bb86453e97e13179420af90a7787ec62939aa199",
+      "original_sha256": "8112533dec37b25d2626dec0bb86453e97e13179420af90a7787ec62939aa199"
+    },
+    {
+      "path": "skills/visual-project-planner/references/topics/revision.md",
+      "sha256": "ab17eae9934626447f7d8967f8c4f87738d75b6b80b4c39783b67bae3bb67f62",
+      "original_sha256": "ab17eae9934626447f7d8967f8c4f87738d75b6b80b4c39783b67bae3bb67f62"
+    },
+    {
+      "path": "skills/visual-project-planner/schema/plan.schema.json",
+      "sha256": "d100f2ca0b052e5f14932c9524617a172b63fb45622f744d397db799680e873f",
+      "original_sha256": "d100f2ca0b052e5f14932c9524617a172b63fb45622f744d397db799680e873f"
+    },
+    {
+      "path": "skills/visual-project-planner/scripts/client.js",
+      "sha256": "91a06429218a0dc125f0abe4bb1cedde4868a988ecb348412b1013be6638ec51",
+      "original_sha256": "91a06429218a0dc125f0abe4bb1cedde4868a988ecb348412b1013be6638ec51"
+    },
+    {
+      "path": "skills/visual-project-planner/scripts/core.mjs",
+      "sha256": "70694e3251430eed0ac9b53b9a26945419bbe9dfeee8bdc8d16dd89a2fed38e4",
+      "original_sha256": "70694e3251430eed0ac9b53b9a26945419bbe9dfeee8bdc8d16dd89a2fed38e4"
+    },
+    {
+      "path": "skills/visual-project-planner/scripts/planner.mjs",
+      "sha256": "e34d4d4849c1bda797fedb76072ff5779230974720922c4942daf71a6175891c",
+      "original_sha256": "e34d4d4849c1bda797fedb76072ff5779230974720922c4942daf71a6175891c"
+    },
+    {
+      "path": "skills/visual-project-planner/scripts/presentation.css",
+      "sha256": "9ed42da30443e8aca3813ab9dffeff7d0fe3a3e9c583f1ee3dba840979afc1c2",
+      "original_sha256": "9ed42da30443e8aca3813ab9dffeff7d0fe3a3e9c583f1ee3dba840979afc1c2"
+    },
+    {
+      "path": "skills/visual-project-planner/vendor/visual-explainer/LICENSE",
+      "sha256": "871b3c6c64e030c0647ca33543716bdae9511ae2d6a85d6f4ce63783bab52c8f",
+      "original_sha256": "871b3c6c64e030c0647ca33543716bdae9511ae2d6a85d6f4ce63783bab52c8f"
+    },
+    {
+      "path": "skills/visual-project-planner/vendor/visual-explainer/lock.json",
+      "sha256": "34ce30c065275e682ddc65494a0ea899603eaf8d91865220e4267f0bd00e2434",
+      "original_sha256": "34ce30c065275e682ddc65494a0ea899603eaf8d91865220e4267f0bd00e2434"
+    },
+    {
+      "path": "skills/visual-project-planner/vendor/visual-explainer/plan.css",
+      "sha256": "6a2fb5c4e85a9ed6330697e437f394af0917fc340979c08a1bfd37573dfa86c3",
+      "original_sha256": "6a2fb5c4e85a9ed6330697e437f394af0917fc340979c08a1bfd37573dfa86c3"
+    },
+    {
+      "path": "skills/visual-project-planner/vendor/visual-explainer/plan.js",
+      "sha256": "b9721da592b37711e2258a23016aab9f6ecae1873685ed7b466a48635260eb4a",
+      "original_sha256": "b9721da592b37711e2258a23016aab9f6ecae1873685ed7b466a48635260eb4a"
+    },
+    {
+      "path": "skills/visual-project-planner/vendor/visual-explainer/render.mjs",
+      "sha256": "5a43065982c07abeba9d98b428ed5598ff019375f70145ef52d3fca7050af9dd",
+      "original_sha256": "5a43065982c07abeba9d98b428ed5598ff019375f70145ef52d3fca7050af9dd"
+    },
+    {
+      "path": "skills/skill-forward-test/SKILL.md",
+      "sha256": "bb69728a3541edad0ba46f9701d90863904cb72353fd96af5c546ab72be4c250",
+      "original_sha256": "4695dd03f5f292382850786ac7de163d75e3c74defea97c77052759da25637bf"
+    },
+    {
+      "path": "skills/skill-forward-test/adapters/codex-own.json",
+      "sha256": "d9ed70754ba39340ee7d6e37a42b45aa27af68fb141ef3952995a9f6b72428f8"
+    },
+    {
+      "path": "skills/skill-forward-test/adapters/codex.json",
+      "sha256": "84a82a41c2dcf3600eed799e90ff1f0c55915d1b7d4cf2da86e6ea82ab9fa4f1"
+    },
+    {
+      "path": "skills/skill-forward-test/agents/openai.yaml",
+      "sha256": "d5a2599a1740c257e943c390a34c196c2cea2834bae3c47c81c23a1f99266705",
+      "original_sha256": "d5a2599a1740c257e943c390a34c196c2cea2834bae3c47c81c23a1f99266705"
+    },
+    {
+      "path": "skills/skill-forward-test/capabilities.json",
+      "sha256": "b6928e0cb92bf2720824c05178aa8a396675efe7b9d1dfa6ddc732660c94cb41"
+    },
+    {
+      "path": "skills/skill-forward-test/references/skill-design-worldview.md",
+      "sha256": "925ec66c170757e6418e34ab140011a1c26ab2a3b01b6eef093a950d5b71b06c",
+      "original_sha256": "925ec66c170757e6418e34ab140011a1c26ab2a3b01b6eef093a950d5b71b06c"
+    }
+  ],
+  "overrides": [
+    "skills/cross-agent-npm-package-development/capabilities.json",
+    "skills/cross-agent-npm-package-development/adapters/codex-own.json",
+    "skills/cross-agent-npm-package-development/adapters/codex.json",
+    "skills/skill-forward-test/capabilities.json",
+    "skills/skill-forward-test/SKILL.md",
+    "skills/skill-forward-test/adapters/codex-own.json",
+    "skills/skill-forward-test/adapters/codex.json"
+  ]
+}

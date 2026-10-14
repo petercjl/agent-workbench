@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "components": [
+    {
+      "package": "@petercjl/1688-product-sourcing",
+      "versionObserved": "0.2.0",
+      "skills": [
+        "1688-product-sourcing"
+      ],
+      "bin": {
+        "1688-product-sourcing": "scripts/1688-product-sourcing.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/xcbi",
+      "versionObserved": "0.1.0",
+      "skills": [
+        "xcbi"
+      ],
+      "bin": {
+        "xcbi": "scripts/xcbi.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/taobao-search-product-form",
+      "versionObserved": "0.1.2",
+      "skills": [
+        "taobao-search-product-form"
+      ],
+      "bin": {
+        "taobao-search-form": "bin/taobao-search-form.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/topazlabscli",
+      "versionObserved": "0.4.1",
+      "skills": [
+        "topazlabscli"
+      ],
+      "bin": {
+        "topazlabscli": "bin/topazlabscli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/story-video-studio",
+      "versionObserved": "0.3.0",
+      "skills": [
+        "goal-driven-video-qa",
+        "story-development-director",
+        "higgsfield-seedance-prompt",
+        "story-video-media-runtime",
+        "ai-video-reference-asset-studio",
+        "story-video-project-studio"
+      ],
+      "bin": {
+        "story-video-studio": "bin/story-video-studio.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/tbcli",
+      "versionObserved": "0.10.4",
+      "skills": [
+        "tbcli",
+        "ecommerce-monthly-profit-report",
+        "tbcli.pre-0.7.0"
+      ],
+      "bin": {
+        "tbcli": "scripts/tbcli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/tradecli",
+      "versionObserved": "0.4.1",
+      "skills": [
+        "tradecli"
+      ],
+      "bin": {
+        "tradecli": "bin/tradecli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/npm-release-kit",
+      "versionObserved": "0.1.4",
+      "skills": [
+        "npm-release-kit"
+      ],
+      "bin": {
+        "npm-release-kit": "bin/npm-release-kit.mjs",
+        "nrk": "bin/npm-release-kit.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/taobao-reconciliation",
+      "versionObserved": "0.1.0",
+      "skills": [
+        "taobao-reconciliation"
+      ],
+      "bin": {
+        "taobao-reconciliation": "bin/taobao-reconciliation.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/procli",
+      "versionObserved": "0.7.0",
+      "skills": [
+        "project-management"
+      ],
+      "bin": {
+        "procli": "bin/procli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/taobao-ai-ops",
+      "versionObserved": "0.3.1",
+      "skills": [
+        "taobao-ai-operations"
+      ],
+      "bin": {
+        "taobao-ai-ops": "bin/taobao-ai-ops.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/1688cli",
+      "versionObserved": "0.4.1",
+      "skills": [
+        "1688cli"
+      ],
+      "bin": {
+        "1688cli": "scripts/1688cli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/pddcli",
+      "versionObserved": "0.4.1",
+      "skills": [
+        "pddcli"
+      ],
+      "bin": {
+        "pddcli": "scripts/pddcli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/sycmcli",
+      "versionObserved": "0.3.1",
+      "skills": [
+        "sycmcli"
+      ],
+      "bin": {
+        "sycmcli": "scripts/sycmcli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/competitor-visual-canvas",
+      "versionObserved": "0.1.1",
+      "skills": [
+        "competitor-visual-canvas"
+      ],
+      "bin": {
+        "competitor-visual-canvas": "bin/competitor-visual-canvas.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/semantic-image-slicer",
+      "versionObserved": "0.1.1",
+      "skills": [
+        "semantic-image-slicer"
+      ],
+      "bin": {
+        "longslice": "dist/cli.js"
+      }
+    },
+    {
+      "package": "@petercjl/zxwscli",
+      "versionObserved": "0.2.0",
+      "skills": [
+        "zxwscli"
+      ],
+      "bin": {
+        "zxwscli": "scripts/zxwscli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/yuce-category-opportunity-report",
+      "versionObserved": "0.1.1",
+      "skills": [
+        "yuce-category-opportunity-report"
+      ],
+      "bin": {
+        "yuce-category-research": "bin/yuce-category-research.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/1688-opportunity-sourcing-research",
+      "versionObserved": "0.1.1",
+      "skills": [
+        "1688-opportunity-sourcing-research"
+      ],
+      "bin": {
+        "1688-opportunity-sourcing-research": "scripts/1688-opportunity-sourcing-research.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/commerce-ui",
+      "versionObserved": "1.2.6",
+      "skills": [
+        "compact-commerce-ui"
+      ],
+      "bin": {
+        "commerce-ui": "bin/commerce-ui.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/yccli",
+      "versionObserved": "0.5.0",
+      "skills": [
+        "yccli"
+      ],
+      "bin": {
+        "yccli": "scripts/yccli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/seedaudiocli",
+      "versionObserved": "0.2.1",
+      "skills": [
+        "seedaudiocli"
+      ],
+      "bin": {
+        "seedaudiocli": "npm/cli.mjs"
+      }
+    },
+    {
+      "package": "@petercjl/sealseek-media-cli",
+      "versionObserved": "0.6.1",
+      "skills": [
+        "sealseek-media"
+      ],
+      "bin": {
+        "sealseek-media": "bin/sealseek-media.mjs"
+      }
+    }
+  ]
+}

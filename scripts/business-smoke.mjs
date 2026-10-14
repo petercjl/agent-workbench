@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import {spawnSync} from 'node:child_process';
+import {targetRoot,fresh} from '../src/environment.mjs';
+const root=targetRoot(),args=process.argv.slice(2),input=args[0],out=args[1];
+if(!input||!out)throw Error('Usage: business-smoke.mjs PLAN_JSON NEW_REPORT_JSON');
+const planner=path.join(root,'skills','visual-project-planner','scripts','planner.mjs');
+const scratch=fs.mkdtempSync(path.join(os.tmpdir(),'workbench-render-'));
+const rendered=path.join(scratch,'rendered');
+const r=spawnSync(process.execPath,[planner,'render',input,'--out',rendered],{encoding:'utf8',timeout:30000});
+if(r.status!==0)throw Error(r.stdout+r.stderr);
+const info=JSON.parse(r.stdout);const html=fs.readFileSync(path.join(rendered,'plan.html'),'utf8');
+const report={ok:info.ok&&html.includes('<html'),platform:process.platform,fromInstalledSkill:true,renderedBytes:Buffer.byteLength(html),warnings:info.warnings,visualAcceptance:false};
+fresh(out,JSON.stringify(report,null,2));console.log(JSON.stringify(report));fs.rmSync(scratch,{recursive:true,force:true});

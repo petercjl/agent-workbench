@@ -1,0 +1,6 @@
+interface:
+  display_name: "可视化项目规划"
+  short_description: "将新建、修改与修订项目的规划组织为可交互的中文决策页"
+  default_prompt: "Use $visual-project-planner to research and present this project plan."
+policy:
+  allow_implicit_invocation: true

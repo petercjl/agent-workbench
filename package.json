@@ -1,0 +1,66 @@
+{
+  "name": "@petercjl/agent-workbench",
+  "version": "0.1.0",
+  "description": "Reviewed Codex work preferences and Skills, safely delivered to codex-own on macOS and Windows",
+  "type": "module",
+  "bin": {
+    "agent-workbench": "bin/agent-workbench.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "bin",
+    "src",
+    "profiles",
+    "skills",
+    "docs",
+    "capabilities.json",
+    "suite-manifest.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/environment.test.mjs",
+    "check": "node scripts/check-package.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petercjl/agent-workbench.git"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "agentSkillSuite": {
+    "schema_version": 1,
+    "nodes": [
+      {
+        "id": "agent-workbench",
+        "skill": "agent-workbench",
+        "requires_skills": []
+      },
+      {
+        "id": "portable-skill-creator",
+        "skill": "portable-skill-creator",
+        "requires_skills": []
+      },
+      {
+        "id": "cross-agent-npm-package-development",
+        "skill": "cross-agent-npm-package-development",
+        "requires_skills": []
+      },
+      {
+        "id": "visual-project-planner",
+        "skill": "visual-project-planner",
+        "requires_skills": []
+      },
+      {
+        "id": "skill-forward-test",
+        "skill": "skill-forward-test",
+        "requires_skills": []
+      }
+    ]
+  }
+}

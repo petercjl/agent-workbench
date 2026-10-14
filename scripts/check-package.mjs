@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {spawnSync} from 'node:child_process';
+import {packageRoot,bundled,readJSON} from '../src/environment.mjs';
+import {privacyFindings} from '../src/tools.mjs';
+bundled();
+const findings=[];
+for(const dir of ['profiles','skills','docs'])findings.push(...privacyFindings(path.join(packageRoot,dir)).map(x=>({...x,file:`${dir}/${x.file}`})));
+const r=spawnSync(process.platform==='win32'?'npm.cmd':'npm',['pack','--dry-run','--json'],{encoding:'utf8',shell:process.platform==='win32'});
+if(r.status!==0)throw Error('npm pack inspection failed');
+const pack=JSON.parse(r.stdout)[0];
+for(const f of pack.files)if(/^(evidence|test|\.github|scripts)\//.test(f.path))findings.push({file:f.path,kind:'development-file'});
+for(const f of pack.files)if(!fs.existsSync(path.join(packageRoot,f.path)))findings.push({file:f.path,kind:'missing'});
+console.log(JSON.stringify({ok:findings.length===0,version:readJSON(path.join(packageRoot,'package.json')).version,files:pack.files.length,unpackedSize:pack.unpackedSize,findings},null,2));
+if(findings.length)process.exitCode=1;

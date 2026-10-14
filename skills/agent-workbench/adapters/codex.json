@@ -1,0 +1,20 @@
+{
+  "schema": "portable-skill-adapter",
+  "platform": "codex",
+  "mappings": [
+    {
+      "capability_id": "command.execute",
+      "status": "implemented",
+      "features": [
+        "node22",
+        "exit-status",
+        "stdout-stderr"
+      ],
+      "implementation": {
+        "kind": "cli",
+        "instructions": "Resolve Node.js and the installed CLI; capture exit status and structured output. Native isolation must be advertised by the current host; never synthesize it."
+      }
+    }
+  ],
+  "compatibility": "CLI mechanism implemented for macOS and Windows; native host capabilities require separate task evidence."
+}

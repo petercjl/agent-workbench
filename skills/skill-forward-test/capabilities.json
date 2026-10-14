@@ -1,0 +1,57 @@
+{
+  "schema": "portable-skill-capabilities",
+  "schema_version": "1.0.0",
+  "skill": "skill-forward-test",
+  "target_platforms": [
+    "codex",
+    "codex-own"
+  ],
+  "capabilities": [
+    {
+      "id": "command.execute",
+      "purpose": "Run the stable CLI and deterministic checks",
+      "required": true,
+      "required_features": [
+        "node22",
+        "exit-status",
+        "stdout-stderr"
+      ],
+      "input_fields": [
+        "command"
+      ],
+      "output_fields": [
+        "ok",
+        "result",
+        "error"
+      ],
+      "side_effects": {
+        "external_mutation": true,
+        "may_cost_money": false,
+        "authorization": "Only operations within the user-authorized task."
+      }
+    },
+    {
+      "id": "agent.isolated-run",
+      "purpose": "User-requested clean regression",
+      "required": false,
+      "required_features": [
+        "fresh-context",
+        "bounded-wait",
+        "result-retrieval"
+      ],
+      "input_fields": [
+        "natural_request"
+      ],
+      "output_fields": [
+        "status",
+        "result",
+        "evidence"
+      ],
+      "side_effects": {
+        "external_mutation": true,
+        "may_cost_money": true,
+        "authorization": "Explicit user request and accepted standard artifact."
+      }
+    }
+  ]
+}

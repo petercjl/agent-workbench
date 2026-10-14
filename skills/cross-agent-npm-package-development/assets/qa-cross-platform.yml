@@ -1,0 +1,26 @@
+# Merge into an existing repository workflow after inspecting it. This is not a release workflow.
+name: Package cross-platform QA
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  qa:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: python -m pip install -r requirements.txt
+      - run: npm test
+      # Package-specific tests must exercise CLI doctor, fresh install, update and rollback.
+      # A separate real Codex/SealSeek host smoke is still required for a `tested` claim.

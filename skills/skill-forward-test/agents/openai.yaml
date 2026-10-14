@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Forward Test"
+  short_description: "干净子 agent 回归验证 skill 是否真正落盘"
+  default_prompt: "Use $skill-forward-test to validate a skill with a clean sub-agent regression test."
