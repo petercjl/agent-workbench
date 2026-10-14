@@ -71,7 +71,7 @@ test('component runtime resolves inside receiver, preserves arguments without sh
  fs.writeFileSync(path.join(source,'package.json'),JSON.stringify({name:'@petercjl/npm-release-kit',version:'1.0.0',bin:{'npm-release-kit':'cli.cjs'}}));
  fs.writeFileSync(path.join(source,'cli.cjs'),'process.stdout.write(JSON.stringify(process.argv.slice(2)))');
  install(root,{yes:true,desired:desired('first'),components:[{package:'@petercjl/npm-release-kit',version:'1.0.0',source,files:[]}]});
- assert.equal(componentEntry(root,'@petercjl/npm-release-kit'),path.join(source,'cli.cjs'));
+ assert.equal(componentEntry(root,'@petercjl/npm-release-kit'),fs.realpathSync(path.join(source,'cli.cjs')));
  const r=spawnSync(process.execPath,[path.join(packageRoot,'bin/agent-workbench.mjs'),'components','run','--home',root,'--name','@petercjl/npm-release-kit','--','doctor','literal $(not-a-command)','中文'],{encoding:'utf8'});
  assert.equal(r.status,0,r.stdout);assert.deepEqual(JSON.parse(r.stdout),['doctor','literal $(not-a-command)','中文']);
  assert.throws(()=>componentEntry(root,'@petercjl/unknown'),{code:'COMPONENT_NOT_INSTALLED'});
