@@ -6,12 +6,13 @@ import os from 'node:os';
 import {spawnSync} from 'node:child_process';
 import {install,preview,status,state,rollback,targetRoot,packageRoot,bundled} from '../src/environment.mjs';
 import {exportSnapshot,privacyFindings,withInstalledComponents,componentEntry} from '../src/tools.mjs';
-import {packEntry} from '../src/npm-json.mjs';
+import {packEntry,registryScalar} from '../src/npm-json.mjs';
 function fixture(t){const root=fs.mkdtempSync(path.join(os.tmpdir(),'工作环境-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));return root;}
 const desired=v=>new Map([['AGENTS.md',Buffer.from('中文规则 '+v)],['skills/demo/SKILL.md',Buffer.from('demo '+v)]]);
 test('package inspection accepts npm 11 arrays and npm 12 keyed manifests',()=>{
  const p={name:'@petercjl/agent-workbench',files:[]};assert.equal(packEntry([p],p.name),p);assert.equal(packEntry({[p.name]:p},p.name),p);
  assert.throws(()=>packEntry({},p.name),/unsupported/);assert.throws(()=>packEntry([{name:'another',files:[]}],p.name),/mismatched/);
+ assert.equal(registryScalar('0.1.4'),'0.1.4');assert.equal(registryScalar(['0.1.4']),'0.1.4');assert.throws(()=>registryScalar(['0.1.4','0.1.5']),/one registry/);
 });
 test('OS paths and original/shared directories protected',()=>{
  assert.equal(targetRoot({},'win32','C:\\Users\\sample','C:\\Users\\sample\\AppData\\Local').endsWith(path.join('codex-own-independent','core')),true);

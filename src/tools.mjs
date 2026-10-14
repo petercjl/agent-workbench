@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {Failure,packageRoot,pkg,readJSON,files,bundled,state,safePath,fresh,sha} from './environment.mjs';
+import {registryScalar} from './npm-json.mjs';
 export const registry=()=>readJSON(path.join(packageRoot,'profiles','components.json')).components;
 export function componentEntry(root,name){
  const component=state(root)?.components.find(c=>c.package===name);if(!component)throw new Failure('COMPONENT_NOT_INSTALLED','Install the selected component first.');
@@ -21,7 +22,7 @@ export function npmRun(args,{timeout=300000}={}){
  if(r.error||r.status!==0)throw new Failure('NPM_FAILED','npm operation failed. Check network, npm installation and registry access.',{status:r.status,reason:r.error?.code||null});
  return r.stdout;
 }
-export function latest(name){if(!/^@petercjl\/[a-z0-9-]+$/.test(name))throw new Failure('INVALID_PACKAGE','Only declared personal-scope components are accepted.');const version=JSON.parse(npmRun(['view',name,'dist-tags.latest','--json','--registry=https://registry.npmjs.org/'],{timeout:30000}));if(!/^\d+\.\d+\.\d+$/.test(version))throw new Failure('INVALID_VERSION','Expected a stable registry version.');return version;}
+export function latest(name){if(!/^@petercjl\/[a-z0-9-]+$/.test(name))throw new Failure('INVALID_PACKAGE','Only declared personal-scope components are accepted.');const version=registryScalar(JSON.parse(npmRun(['view',name,'dist-tags.latest','--json','--registry=https://registry.npmjs.org/'],{timeout:30000})));if(!/^\d+\.\d+\.\d+$/.test(version))throw new Failure('INVALID_VERSION','Expected a stable registry version.');return version;}
 export function withInstalledComponents(root,desired=bundled()){
  const s=state(root);
  for(const c of s?.components||[])for(const rel of c.files){if(desired.has(rel))throw new Failure('SKILL_COLLISION','Component collides with a bundled Skill.',{path:rel});desired.set(rel,fs.readFileSync(safePath(root,rel)));}
