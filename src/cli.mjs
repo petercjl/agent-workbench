@@ -4,7 +4,7 @@ import os from 'node:os';
 import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {packageRoot,pkg,Failure,targetRoot,readJSON,bundled,preview,install,status,rollback,state,safePath} from './environment.mjs';
-import {registry,npmRun,latest,withInstalledComponents,prepareComponents,inventory,exportSnapshot} from './tools.mjs';
+import {registry,npmRun,latest,withInstalledComponents,prepareComponents,inventory,exportSnapshot,componentEntry} from './tools.mjs';
 const help=`agent-workbench — original Codex publishes; codex-own receives
   version | capabilities --json
   inventory [--source-home PATH] --json
@@ -14,12 +14,13 @@ const help=`agent-workbench — original Codex publishes; codex-own receives
   skill source [--name NAME] --json
   skill status|install|update [--yes] [--agent codex-own]
   components list | components install --name @petercjl/PACKAGE [--yes]
+  components run --name @petercjl/PACKAGE -- COMMAND_ARGS
   update check | update install [--yes]
 Default install is a preview. --yes applies. --adopt backs up existing unmanaged
 targets before adopting them; local edits to managed files always stop updates.
 No account, API configuration, conversation or original Codex file is migrated.
 See docs/receiver.md and docs/publisher.md in the npm package.`;
-function parse(argv){const positional=[],flags={};for(let i=0;i<argv.length;i++){const x=argv[i];if(!x.startsWith('--'))positional.push(x);else{const key=x.slice(2);if(['yes','adopt','json','refresh-components','help'].includes(key))flags[key]=true;else{if(!argv[i+1]||argv[i+1].startsWith('--'))throw new Failure('ARGUMENT_REQUIRED',`Value required for ${x}`);flags[key]=argv[++i];}}}return {positional,flags};}
+function parse(argv){const positional=[],flags={};for(let i=0;i<argv.length;i++){const x=argv[i];if(x==='--'){flags.args=argv.slice(i+1);break;}if(!x.startsWith('--'))positional.push(x);else{const key=x.slice(2);if(['yes','adopt','json','refresh-components','help'].includes(key))flags[key]=true;else{if(!argv[i+1]||argv[i+1].startsWith('--'))throw new Failure('ARGUMENT_REQUIRED',`Value required for ${x}`);flags[key]=argv[++i];}}}return {positional,flags};}
 const output=v=>process.stdout.write(JSON.stringify(v,null,2)+'\n');
 export async function main(argv){try{const {positional:[command,sub],flags}=parse(argv);
  if(!command||['help','--help','-h'].includes(command)){process.stdout.write(help+'\n');return;}
@@ -33,11 +34,17 @@ export async function main(argv){try{const {positional:[command,sub],flags}=pars
  }
  if(command==='components'&&sub==='list'){output({ok:true,components:registry(),automatic:false});return;}
  const root=targetRoot(flags);
+ if(command==='components'&&sub==='run'){
+  if(!flags.name)throw new Failure('ARGUMENT_REQUIRED','Select an installed --name package.');
+  const entry=componentEntry(root,flags.name);const r=spawnSync(process.execPath,[entry,...flags.args||[]],{stdio:'inherit',windowsHide:true});
+  if(r.error)throw new Failure('COMPONENT_RUN_FAILED','Could not start the installed component.');process.exitCode=r.status||0;return;
+ }
  if(command==='status'||command==='skill'&&sub==='status'){output(status(root));return;}
  if(command==='doctor'){
   bundled();const current=status(root),warnings=[];
   for(const name of ['skill-creator'])if(!fs.existsSync(path.join(root,'skills',name,'SKILL.md'))&&!fs.existsSync(path.join(root,'skills','.system',name,'SKILL.md')))warnings.push({code:'NESTED_SKILL_REQUIRED',skill:name,affects:'portable-skill-creator',message:'Resolve the host-advertised base creator before Skill authoring. It is not redistributed by this package.'});
   const python=spawnSync(process.platform==='win32'?'python':'python3',['--version'],{encoding:'utf8',windowsHide:true,timeout:5000});if(python.status!==0)warnings.push({code:'PYTHON_MISSING',affects:'portable Skill validation scripts'});
+  for(const c of current.components)try{componentEntry(root,c.package);}catch(e){warnings.push({code:e.code,package:c.package});}
   output({...current,ok:current.ok,node:process.versions.node,platform:process.platform,warnings,nativeCapabilities:'image generation, browser automation and service accounts require separate host adapters/authentication',discovery:'Restart codex-own or create a new conversation after installing.'});return;
  }
  if(command==='install'||command==='skill'&&['install','update'].includes(sub)){

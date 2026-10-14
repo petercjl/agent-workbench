@@ -5,6 +5,14 @@ import crypto from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {Failure,packageRoot,pkg,readJSON,files,bundled,state,safePath,fresh,sha} from './environment.mjs';
 export const registry=()=>readJSON(path.join(packageRoot,'profiles','components.json')).components;
+export function componentEntry(root,name){
+ const component=state(root)?.components.find(c=>c.package===name);if(!component)throw new Failure('COMPONENT_NOT_INSTALLED','Install the selected component first.');
+ const source=fs.realpathSync(component.source),allowed=fs.realpathSync(safePath(root,'.agent-workbench/toolsets'));
+ if(!source.startsWith(allowed+path.sep))throw new Failure('INVALID_COMPONENT_SOURCE','Component runtime must belong to this receiving environment.');
+ const meta=readJSON(path.join(source,'package.json'));if(meta.name!==name||meta.version!==component.version)throw new Failure('COMPONENT_INTEGRITY','Installed component metadata changed.');
+ const bin=typeof meta.bin==='string'?meta.bin:Object.values(meta.bin||{})[0];if(!bin)throw new Failure('NO_COMPONENT_CLI','Component has no CLI.');
+ const entry=fs.realpathSync(path.resolve(source,bin));if(!entry.startsWith(source+path.sep))throw new Failure('INVALID_COMPONENT','Component CLI escapes its package.');return entry;
+}
 export function npmRun(args,{timeout=300000}={}){
  const exe=path.dirname(process.execPath);
  const candidates=[process.env.AGENT_WORKBENCH_NPM_CLI,path.join(exe,'node_modules/npm/bin/npm-cli.js'),path.join(exe,'../lib/node_modules/npm/bin/npm-cli.js'),path.join(exe,'../node_modules/npm/bin/npm-cli.js')].filter(Boolean);

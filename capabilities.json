@@ -2,7 +2,7 @@
   "schema_version": 1,
   "package": "@petercjl/agent-workbench",
   "targets": ["codex-own:macos", "codex-own:windows"],
-  "operations": ["version", "capabilities", "doctor", "inventory", "export", "install", "status", "rollback", "skill source", "skill status", "skill install", "skill update", "components list", "components install", "update check", "update install"],
+  "operations": ["version", "capabilities", "doctor", "inventory", "export", "install", "status", "rollback", "skill source", "skill status", "skill install", "skill update", "components list", "components install", "components run", "update check", "update install"],
   "authority": {"producer": "original Codex, read-only explicit allowlist", "receiver": "codex-own private CODEX_HOME only", "credentials": "never included or migrated", "publication": "separate authorized GitHub Actions OIDC workflow"},
   "native_tools": "Skill installation does not grant image generation, connectors or service authentication. Optional capability gaps are reported separately."
 }

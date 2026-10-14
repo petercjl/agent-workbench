@@ -12,7 +12,7 @@ description: Publish reviewed work preferences from original Codex, or install, 
 1. 通过 `agent-workbench version`、`capabilities --json`、`skill source --json` 发现当前包和唯一来源。读取 [兼容说明](references/compatibility.md)，核实目标为 codex-own。包不存在时安装准确 npm 包 `@petercjl/agent-workbench`。
 2. 运行 `agent-workbench doctor --json` 和 `install` 预览。默认路径由操作系统解析；`--home` 用于明确指定的独立接收目录。原版和共享 Agent 目录禁止写入。
 3. 在已授权范围内执行 `install --yes` 或 `update install --yes`。遇到已有非受管文件先解释冲突及备份方案，明确授权接管后才使用 `--adopt`；受管文件被本地修改时停止覆盖。
-4. 已有 npm 工具通过 `components list` 选择，执行 `components install --name PACKAGE --yes`。按组件自己的 `skill source` 合同解析来源；工具包安装不代表服务已授权。
+4. 已有 npm 工具通过 `components list` 选择，执行 `components install --name PACKAGE --yes`。按组件自己的 `skill source` 合同解析来源；工具包安装不代表服务已授权。调用工具时使用 `agent-workbench components run --name PACKAGE -- 工具参数`，由环境包解析本机实际入口；不会假定它已在全局 PATH 中。管理 CLI 未安装到 PATH 时，通过 `npx --yes @petercjl/agent-workbench@latest` 调用；Windows 使用 npx.cmd。
 5. 检查 `status`、`doctor --json` 及返回的备份、版本和哈希。新建对话或重启 codex-own 验证发现，再完成所需能力的小任务。分别报告安装、发现和真实运行证据。
 
 ## 发布主线

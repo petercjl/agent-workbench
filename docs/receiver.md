@@ -63,6 +63,8 @@ npx --yes @petercjl/agent-workbench@latest doctor --json
 
 通过 `components list` 查看已登记工具，再用 `components install --name @petercjl/工具包名 --yes` 安装所需组件。组件采用自己的 canonical Skill 来源，安装生命周期脚本默认关闭；原生依赖与服务授权需按组件指南另行检查。部分组件合同可能尚未兼容，失败会保留原有环境并报告 COMPONENT_CONTRACT。
 
+组件运行时独立保存在接收目录，使用 `components run --name @petercjl/工具包名 -- 工具参数` 委托执行。该入口传递参数而不经过 shell，不要求修改系统 PATH 或原版的工具安装。
+
 使用 `rollback` 预览恢复，再使用 `rollback --yes` 执行。每次操作返回实际备份目录；保留该目录以便恢复。连续回滚会回到上一次操作前的状态，包含回滚操作本身。
 
 默认部署目录：Mac 为 `~/Library/Application Support/codex-own-independent/core`；Windows 为 `%LOCALAPPDATA%\codex-own-independent\core`。其中 AGENTS.md 和 skills 由本包管理，`.agent-workbench` 存放版本、备份、组件和更新管理器。config.toml、auth.json、数据库、对话及项目不迁移。发布方的原版和共享 Agent 目录受安装器保护。

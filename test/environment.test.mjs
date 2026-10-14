@@ -5,7 +5,7 @@ import path from 'node:path';
 import os from 'node:os';
 import {spawnSync} from 'node:child_process';
 import {install,preview,status,state,rollback,targetRoot,packageRoot,bundled} from '../src/environment.mjs';
-import {exportSnapshot,privacyFindings,withInstalledComponents} from '../src/tools.mjs';
+import {exportSnapshot,privacyFindings,withInstalledComponents,componentEntry} from '../src/tools.mjs';
 function fixture(t){const root=fs.mkdtempSync(path.join(os.tmpdir(),'工作环境-'));t.after(()=>fs.rmSync(root,{recursive:true,force:true}));return root;}
 const desired=v=>new Map([['AGENTS.md',Buffer.from('中文规则 '+v)],['skills/demo/SKILL.md',Buffer.from('demo '+v)]]);
 test('OS paths and original/shared directories protected',()=>{
@@ -65,4 +65,14 @@ test('export only allowlist, collision refusal, privacy scanner',t=>{
  const root=fixture(t),source=path.join(root,'producer'),out=path.join(root,'export');fs.mkdirSync(source);fs.cpSync(path.join(packageRoot,'skills'),path.join(source,'skills'),{recursive:true});
  fs.writeFileSync(path.join(source,'auth.json'),'never export');const r=exportSnapshot(source,out);assert.equal(r.ok,true);assert.equal(fs.existsSync(path.join(out,'auth.json')),false);
  assert.throws(()=>exportSnapshot(source,out),{code:'TARGET_EXISTS'});fs.writeFileSync(path.join(out,'private.txt'),'/Users/private-name/company/file');assert.equal(privacyFindings(out).some(f=>f.kind==='absolute-user-path'),true);
+});
+test('component runtime resolves inside receiver, preserves arguments without shell',t=>{
+ const root=fixture(t),source=path.join(root,'.agent-workbench/toolsets/demo/node_modules/@petercjl/npm-release-kit');fs.mkdirSync(source,{recursive:true});
+ fs.writeFileSync(path.join(source,'package.json'),JSON.stringify({name:'@petercjl/npm-release-kit',version:'1.0.0',bin:{'npm-release-kit':'cli.cjs'}}));
+ fs.writeFileSync(path.join(source,'cli.cjs'),'process.stdout.write(JSON.stringify(process.argv.slice(2)))');
+ install(root,{yes:true,desired:desired('first'),components:[{package:'@petercjl/npm-release-kit',version:'1.0.0',source,files:[]}]});
+ assert.equal(componentEntry(root,'@petercjl/npm-release-kit'),path.join(source,'cli.cjs'));
+ const r=spawnSync(process.execPath,[path.join(packageRoot,'bin/agent-workbench.mjs'),'components','run','--home',root,'--name','@petercjl/npm-release-kit','--','doctor','literal $(not-a-command)','中文'],{encoding:'utf8'});
+ assert.equal(r.status,0,r.stdout);assert.deepEqual(JSON.parse(r.stdout),['doctor','literal $(not-a-command)','中文']);
+ assert.throws(()=>componentEntry(root,'@petercjl/unknown'),{code:'COMPONENT_NOT_INSTALLED'});
 });
